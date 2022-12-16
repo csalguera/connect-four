@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
+}
+
+section#grid {
+  display: grid;
+  grid-template-columns: repeat(7, 10vmin);
+  grid-template-rows: repeat(6, 10vmin);
+  grid-gap: 0vmin;
+}
+
+div {
+  background: rgba(0, 0, 0, 0);
+  border: 3px solid black;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+h1, section#grid {
+  margin: 10px auto;
+}
