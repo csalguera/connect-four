@@ -1,5 +1,7 @@
 # Connect Four
-## GA Unit 1 Project
 
 ### Objective:
 - Build a Browser-based Game
+- Include win/loss logic
+- Render messages based upon current state of game (win, tie, in progress)
+- Include separate HTML, CSS, and JavaScript data files
