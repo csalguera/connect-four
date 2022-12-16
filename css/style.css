@@ -3,6 +3,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: gray;
+  text-align: center;
 }
 
 section#grid {
