@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+*,
+*::before,
+*,::after {
+  font-family: 'Anton', sans-serif;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -20,8 +28,19 @@ div.gr {
   vertical-align: middle;
 }
 
-h1, section#grid {
+section#grid {
   margin: 10px auto;
+}
+
+h1 {
+  background-color: black;
+  color: yellow;
+  padding: 10px;
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
 }
 
 #score-board {
@@ -33,11 +52,27 @@ h1, section#grid {
 #score-board >
 h3 {
   padding: 5px;
-  margin-left: 1px;
-  margin-right: 1px;
-  border: solid 1px black;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  padding: 10px;
+  font-size: 24px;
+  color: whitesmoke;
+}
+
+#p1Sc {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+#p2Sc {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #reset-btn {
   margin: auto;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: none;
+  border-radius: 100px;
+  padding: 10px;
 }
