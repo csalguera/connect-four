@@ -101,7 +101,7 @@ const winningCombos = [
 // Cached Element References -----------------------------------------------
 const gridEls = document.querySelectorAll('.gr')
 const messageEl = document.querySelector('#message')
-
+const resetBtn = document.querySelector('#reset-btn')
 // Variables ---------------------------------------------------------------
 
 let winner
@@ -111,11 +111,8 @@ let grid
 let score
 
 // Event Listeners ---------------------------------------------------------
-
-gridEls.forEach(gr => {
-  gr.addEventListener('click', handleClick)
-})
-
+gridEls.forEach(gr => gr.addEventListener('click', handleClick))
+resetBtn.addEventListener('click', init)
 // Functions ---------------------------------------------------------------
 
 init()
