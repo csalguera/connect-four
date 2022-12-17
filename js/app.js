@@ -173,6 +173,22 @@ function handleClick(evt) {
 }
 
 function placePiece(idx) {
+  if (idx <= 6) {
+    placeRowOne(idx)
+  } else if (idx >= 7 && idx <= 13) {
+    placeRowTwo(idx)
+  } else if (idx >= 14 && idx <= 20) {
+    placeRowThree(idx)
+  } else if (idx >= 21 && idx <= 27) {
+    placeRowFour(idx)
+  } else if (idx >= 28 && idx <= 34) {
+    placeRowFive(idx)
+  } else if (idx >= 35) {
+    placeRowSix(idx)
+  }
+}
+
+function placeRowOne(idx) {
   while (!grid[idx]) {
     if (!grid[idx + 35]) {
       idx += 35
@@ -187,6 +203,58 @@ function placePiece(idx) {
     }
     grid[idx] = turn
   }
+}
+
+function placeRowTwo(idx) {
+  while (!grid[idx]) {
+    if (!grid[idx + 28]) {
+      idx += 28
+    } else if (!grid[idx + 21]) {
+      idx += 21
+    } else if (!grid[idx + 14]) {
+      idx += 14
+    } else if (!grid[idx + 7]) {
+      idx += 7
+    }
+    grid[idx] = turn
+  }
+}
+
+function placeRowThree(idx) {
+  while (!grid[idx]) {
+    if (!grid[idx + 21]) {
+      idx += 21
+    } else if (!grid[idx + 14]) {
+      idx += 14
+    } else if (!grid[idx + 7]) {
+      idx += 7
+    }
+    grid[idx] = turn
+  }
+}
+
+function placeRowFour(idx) {
+  while (!grid[idx]) {
+    if (!grid[idx + 14]) {
+      idx += 14
+    } else if (!grid[idx + 7]) {
+      idx += 7
+    }
+    grid[idx] = turn
+  }
+}
+
+function placeRowFive(idx) {
+  while (!grid[idx]) {
+    if (!grid[idx + 7]) {
+      idx += 7
+    }
+    grid[idx] = turn
+  }
+}
+
+function placeRowSix(idx) {
+  grid[idx] = turn
 }
 
 function checkForTie() {
