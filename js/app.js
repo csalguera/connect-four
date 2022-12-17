@@ -175,10 +175,20 @@ function handleClick(evt) {
 }
 
 function placePiece(idx) {
-  while (idx < 35) {
-    idx += 7
+  while (!grid[idx]) {
+    if (!grid[idx + 35]) {
+      idx += 35
+    } else if (!grid[idx + 28]) {
+      idx += 28
+    } else if (!grid[idx + 21]) {
+      idx += 21
+    } else if (!grid[idx + 14]) {
+      idx += 14
+    } else if (!grid[idx + 7]) {
+      idx += 7
+    }
+    grid[idx] = turn
   }
-  grid[idx] = turn
 }
 
 function checkForTie() {
