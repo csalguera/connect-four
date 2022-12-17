@@ -13,7 +13,7 @@ section#grid {
   grid-gap: 0vmin;
 }
 
-div {
+div.gr {
   background: rgba(0, 0, 0, 0);
   border: 3px solid yellow;
   border-radius: 50%;
@@ -22,4 +22,22 @@ div {
 
 h1, section#grid {
   margin: 10px auto;
+}
+
+#score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#score-board >
+h3 {
+  padding: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border: solid 1px black;
+}
+
+#reset-btn {
+  margin: auto;
 }
