@@ -113,6 +113,7 @@ let score
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
+resetBtn.addEventListener('mousedown', changeResetBtnStyle)
 // Functions ---------------------------------------------------------------
 
 init()
@@ -207,4 +208,11 @@ function checkForWinner() {
 function switchPlayerTurn() {
   if (winner) return
   turn *= -1
+}
+
+function changeResetBtnStyle(evt) {
+  evt.target.style.filter = 'brightness(75%)'
+  resetBtn.addEventListener('mouseup', () => {
+    evt.target.style.filter = ''
+  })
 }
