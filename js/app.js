@@ -102,13 +102,16 @@ const winningCombos = [
 const gridEls = document.querySelectorAll('.gr')
 const messageEl = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-btn')
+const player1Score = document.querySelector('#p1Sc')
+const player2Score = document.querySelector('#p2Sc')
 // Variables ---------------------------------------------------------------
 
 let winner
 let tie 
 let turn
 let grid
-let score
+let p1Score = 0
+let p2Score = 0
 
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
@@ -130,13 +133,13 @@ function init() {
     null, null, null, null, null, null, null,
     null, null, null, null, null, null, null
   ]
-
   render()
 }
 
 function render() {
   updateGrid()
   updateMessage()
+  updateScore()
 }
 
 function updateGrid() {
@@ -158,6 +161,12 @@ function updateMessage() {
     messageEl.textContent = `Bummer! There is no winner this time.`
   } else {
     messageEl.textContent = `Congratulations ${turn === 1 ? 'Player 1' : 'Player 2'}! You won!`
+  }
+}
+
+function updateScore() {
+  if (winner) {
+    turn === 1 ? player1Score.textContent = `Player 1 Score: ${p1Score += 1}` : player2Score.textContent = `Player 2 Score: ${p2Score += 1}`
   }
 }
 
