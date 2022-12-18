@@ -140,6 +140,7 @@ function render() {
   updateGrid()
   updateMessage()
   updateScore()
+  updateResetBtn()
 }
 
 function updateGrid() {
@@ -167,6 +168,14 @@ function updateMessage() {
 function updateScore() {
   if (winner) {
     turn === 1 ? player1Score.textContent = `Player 1 Score: ${p1Score += 1}` : player2Score.textContent = `Player 2 Score: ${p2Score += 1}`
+  }
+}
+
+function updateResetBtn() {
+  if (!winner) {
+    resetBtn.hidden = true
+  } else {
+    resetBtn.hidden = false
   }
 }
 
