@@ -181,7 +181,7 @@ function updateResetBtn() {
 
 function handleClick(evt) {
   const grIdx = parseInt(evt.target.id.replace('gr', ''))
-  if (grid[grIdx]) return
+  // if (grid[grIdx]) return
   if (winner) return
   placePiece(grIdx)
   checkForTie()
@@ -192,21 +192,21 @@ function handleClick(evt) {
 
 function placePiece(idx) {
   if (idx <= 6) {
-    placeRowOne(idx)
+    fromRowOne(idx)
   } else if (idx >= 7 && idx <= 13) {
-    placeRowTwo(idx)
+    fromRowTwo(idx)
   } else if (idx >= 14 && idx <= 20) {
-    placeRowThree(idx)
+    fromRowThree(idx)
   } else if (idx >= 21 && idx <= 27) {
-    placeRowFour(idx)
+    fromRowFour(idx)
   } else if (idx >= 28 && idx <= 34) {
-    placeRowFive(idx)
+    fromRowFive(idx)
   } else if (idx >= 35) {
-    placeRowSix(idx)
+    fromRowSix(idx)
   }
 }
 
-function placeRowOne(idx) {
+function fromRowOne(idx) {
   while (!grid[idx]) {
     if (!grid[idx + 35]) {
       idx += 35
@@ -223,7 +223,7 @@ function placeRowOne(idx) {
   }
 }
 
-function placeRowTwo(idx) {
+function fromRowTwo(idx) {
   while (!grid[idx]) {
     if (!grid[idx + 28]) {
       idx += 28
@@ -238,7 +238,7 @@ function placeRowTwo(idx) {
   }
 }
 
-function placeRowThree(idx) {
+function fromRowThree(idx) {
   while (!grid[idx]) {
     if (!grid[idx + 21]) {
       idx += 21
@@ -251,7 +251,7 @@ function placeRowThree(idx) {
   }
 }
 
-function placeRowFour(idx) {
+function fromRowFour(idx) {
   while (!grid[idx]) {
     if (!grid[idx + 14]) {
       idx += 14
@@ -262,7 +262,7 @@ function placeRowFour(idx) {
   }
 }
 
-function placeRowFive(idx) {
+function fromRowFive(idx) {
   while (!grid[idx]) {
     if (!grid[idx + 7]) {
       idx += 7
@@ -271,8 +271,26 @@ function placeRowFive(idx) {
   }
 }
 
-function placeRowSix(idx) {
-  grid[idx] = turn
+function fromRowSix(idx) {
+  if (grid[idx - 35]) return
+  if (!grid[idx]) {
+    grid[idx] = turn
+  } else {
+    while (grid[idx] && !grid[idx - 35]) {
+      if (!grid[idx - 7]) {
+        idx -= 7
+      } else if (!grid[idx - 14]) {
+        idx -= 14
+      } else if (!grid[idx - 21]) {
+        idx -= 21
+      } else if (!grid[idx - 28]) {
+        idx -= 28
+      } else if (!grid[idx - 35]) {
+        idx -= 35
+      }
+    }
+    grid[idx] = turn
+  }
 }
 
 function checkForTie() {
