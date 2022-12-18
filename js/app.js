@@ -65,10 +65,10 @@ const winningCombos = [
   // 7 - 39 Diagonal Combo(s)
   [7, 15, 23, 31],
   [15, 23, 31, 39],
-  // 0 - 30 Diagonal Combo(s)
+  // 0 - 40 Diagonal Combo(s)
   [0, 8, 16, 24],
   [8, 16, 24, 32],
-  [16, 24, 32, 30],
+  [16, 24, 32, 40],
   // 1 - 41 Diagonal Combo(s)
   [1, 9, 17, 25],
   [9, 17, 25, 33],
@@ -172,7 +172,7 @@ function updateScore() {
 }
 
 function updateResetBtn() {
-  if (!winner) {
+  if (!winner && !tie) {
     resetBtn.hidden = true
   } else {
     resetBtn.hidden = false
