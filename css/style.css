@@ -12,6 +12,7 @@ body {
   flex-direction: column;
   background-color: gray;
   text-align: center;
+  user-select: none;
 }
 
 section#grid {
@@ -19,6 +20,7 @@ section#grid {
   grid-template-columns: repeat(7, 10vmin);
   grid-template-rows: repeat(6, 10vmin);
   grid-gap: 0vmin;
+  cursor: pointer;
 }
 
 div.gr {
@@ -75,6 +77,7 @@ h3 {
   border: none;
   border-radius: 100px;
   padding: 10px;
+  cursor: pointer;
 }
 
 #reset-btn:hover {
