@@ -223,7 +223,8 @@ function fromRowOne(idx) {
 }
 
 function fromRowTwo(idx) {
-  while (!grid[idx]) {
+  if (grid[idx - 7]) return
+  if (!grid[idx]) {
     if (!grid[idx + 28]) {
       idx += 28
     } else if (!grid[idx + 21]) {
@@ -232,6 +233,11 @@ function fromRowTwo(idx) {
       idx += 14
     } else if (!grid[idx + 7]) {
       idx += 7
+    }
+    grid[idx] = turn
+  } else {
+    if (grid[idx] && ! grid[idx - 7]) {
+      idx -= 7
     }
     grid[idx] = turn
   }
