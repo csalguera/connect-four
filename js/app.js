@@ -317,7 +317,7 @@ function fromRowSix(idx) {
   if (!grid[idx]) {
     grid[idx] = turn
   } else {
-    while (grid[idx] && !grid[idx - 35]) {
+    if (grid[idx] && !grid[idx - 35]) {
       if (!grid[idx - 7]) {
         idx -= 7
       } else if (!grid[idx - 14]) {
