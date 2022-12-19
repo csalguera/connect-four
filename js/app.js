@@ -290,9 +290,23 @@ function fromRowFour(idx) {
 }
 
 function fromRowFive(idx) {
-  while (!grid[idx]) {
+  if (grid[idx - 28]) return
+  if (!grid[idx]) {
     if (!grid[idx + 7]) {
       idx += 7
+    }
+    grid[idx] = turn
+  } else {
+    if (grid[idx] && !grid[idx - 28]) {
+      if (!grid[idx - 7]) {
+        idx -= 7
+      } else if (!grid[idx - 14]) {
+        idx -= 14
+      } else if (!grid[idx - 21]) {
+        idx -= 21
+      } else if (!grid[idx - 28]) {
+        idx -= 28
+      }
     }
     grid[idx] = turn
   }
