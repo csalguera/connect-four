@@ -82,12 +82,12 @@ h3 {
 }
 
 .fall {
-  animation: fall-animation 5s ;
+  animation: fall-animation 1s ;
 }
 
 @keyframes fall-animation {
   from {
-    transform: translateY(-500px);
+    transform: translateY(-500%);
   }
   to {
     transform: translateY(0);

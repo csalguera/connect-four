@@ -136,6 +136,7 @@ function render() {
   updateMessage()
   updateScore()
   updateResetBtn()
+  updateGridClass()
 }
 
 function updateGrid() {
@@ -174,14 +175,27 @@ function updateResetBtn() {
   }
 }
 
+function updateGridClass() {
+  if (winner || tie) {
+    gridEls.forEach(gr => {
+      gr.classList.remove('fall')
+    })
+  }
+}
+
 function handleClick(evt) {
   const grIdx = parseInt(evt.target.id.replace('gr', ''))
   if (winner) return
   placePiece(grIdx)
+  animatePiece(evt)
   checkForTie()
   checkForWinner()
   switchPlayerTurn(grIdx)
   render()
+}
+
+function animatePiece(evt) {
+  evt.target.classList.add('fall')
 }
 
 function placePiece(idx) {
