@@ -222,21 +222,21 @@ function animatePiece(evt, idx) {
 
 function placePiece(idx) {
   if (idx <= 6) {
-    fromRowOne(idx)
+    placeFromRow1(idx)
   } else if (idx >= 7 && idx <= 13) {
-    fromRowTwo(idx)
+    placeFromRow2(idx)
   } else if (idx >= 14 && idx <= 20) {
-    fromRowThree(idx)
+    placeFromRow3(idx)
   } else if (idx >= 21 && idx <= 27) {
-    fromRowFour(idx)
+    placeFromRow4(idx)
   } else if (idx >= 28 && idx <= 34) {
-    fromRowFive(idx)
+    placeFromRow5(idx)
   } else if (idx >= 35) {
-    fromRowSix(idx)
+    placeFromRow6(idx)
   }
 }
 
-function fromRowOne(idx) {
+function placeFromRow1(idx) {
   if (grid[idx]) return
   if (!grid[idx + 35]) {
     idx += 35
@@ -252,7 +252,7 @@ function fromRowOne(idx) {
   grid[idx] = turn
 }
 
-function fromRowTwo(idx) {
+function placeFromRow2(idx) {
   if (grid[idx - 7]) return
   if (!grid[idx]) {
     if (!grid[idx + 28]) {
@@ -273,7 +273,7 @@ function fromRowTwo(idx) {
   }
 }
 
-function fromRowThree(idx) {
+function placeFromRow3(idx) {
   if (grid[idx - 14]) return
   if (!grid[idx]) {
     if (!grid[idx + 21]) {
@@ -296,7 +296,7 @@ function fromRowThree(idx) {
   }
 }
 
-function fromRowFour(idx) {
+function placeFromRow4(idx) {
   if (grid[idx - 21]) return
   if (!grid[idx]) {
     if (!grid[idx + 14]) {
@@ -319,7 +319,7 @@ function fromRowFour(idx) {
   }
 }
 
-function fromRowFive(idx) {
+function placeFromRow5(idx) {
   if (grid[idx - 28]) return
   if (!grid[idx]) {
     if (!grid[idx + 7]) {
@@ -342,7 +342,7 @@ function fromRowFive(idx) {
   }
 }
 
-function fromRowSix(idx) {
+function placeFromRow6(idx) {
   if (grid[idx - 35]) return
   if (!grid[idx]) {
     grid[idx] = turn

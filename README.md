@@ -8,7 +8,7 @@
 
 # [Launch Game](https://csalguera-connect-four.netlify.app/)
 
-### Features
+### Features:
 - Browser-based game of Connect Four
 - Local Multiplayer
 - Scoreboard to keep track of player 1 and 2 scores
