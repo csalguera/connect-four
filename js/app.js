@@ -369,4 +369,7 @@ function changeResetBtnStyle(evt) {
   resetBtn.addEventListener('mouseout', () => {
     evt.target.style.filter = ''
   })
+  resetBtn.addEventListener('mouseover', () => {
+    evt.target.style.filter = 'brightness(75%)'
+  })
 }
