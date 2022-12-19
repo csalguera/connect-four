@@ -23,7 +23,7 @@ section#grid, section#background-grid {
   display: grid;
   grid-template-columns: repeat(7, 10vmin);
   grid-template-rows: repeat(6, 10vmin);
-  grid-gap: 0vmin;
+  grid-gap: 1vmin;
   cursor: pointer;
 }
 
