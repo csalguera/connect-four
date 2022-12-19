@@ -1,7 +1,5 @@
 // Constants ---------------------------------------------------------------
-
 const winningCombos = [
-
   // Row 1: Horizontal Combos
   [0, 1, 2, 3],
   [1, 2, 3, 4],
@@ -97,7 +95,6 @@ const winningCombos = [
   // 3 - 21 Diagonal Combo(s)
   [3, 9, 15, 21]
 ]
-
 // Cached Element References -----------------------------------------------
 const gridEls = document.querySelectorAll('.gr')
 const messageEl = document.querySelector('#message')
@@ -105,14 +102,12 @@ const resetBtn = document.querySelector('#reset-btn')
 const player1Score = document.querySelector('#p1Sc')
 const player2Score = document.querySelector('#p2Sc')
 // Variables ---------------------------------------------------------------
-
 let winner
 let tie 
 let turn
 let grid
 let p1Score = 0
 let p2Score = 0
-
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
@@ -181,7 +176,6 @@ function updateResetBtn() {
 
 function handleClick(evt) {
   const grIdx = parseInt(evt.target.id.replace('gr', ''))
-  // if (grid[grIdx]) return
   if (winner) return
   placePiece(grIdx)
   checkForTie()
@@ -352,13 +346,18 @@ function checkForWinner() {
 
 function switchPlayerTurn(idx) {
   if (winner) return
+  // Prvents turn switch when column is full and Row 6 is clicked on
   if (grid[idx] && grid[idx - 35]) return
+  // Prevents turn switch when column is full and Row 5 is clicked on
   if (grid[idx + 7] && grid[idx - 28]) return
+  // Prevents turn switch when column is full and Row 4 is clicked on
   if (grid[idx + 14] && grid[idx - 21]) return
+  // Prevents turn switch when column is full and Row 3 is clicked on
   if (grid[idx + 21] && grid[idx - 14]) return
+  // Prevents turn switch when column is full and Row 2 is clicked on
   if (grid[idx + 28] && grid[idx - 7]) return
+  // Prevents turn switch when column is full and Row 1 is clicked on
   if (grid[idx + 35] && grid[idx]) return
-  console.log('switch');
   turn *= -1
 }
 
