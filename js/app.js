@@ -187,15 +187,33 @@ function handleClick(evt) {
   const grIdx = parseInt(evt.target.id.replace('gr', ''))
   if (winner) return
   placePiece(grIdx)
-  animatePiece(evt)
+  animatePiece(evt, grIdx)
   checkForTie()
   checkForWinner()
   switchPlayerTurn(grIdx)
   render()
 }
 
-function animatePiece(evt) {
-  evt.target.classList.add('fall')
+function animatePiece(evt, idx) {
+  if (idx <= 6) {
+    evt.target.classList.add('fall-1')
+  }
+  if (idx >= 7 && idx <= 13) {
+    evt.target.classList.add('fall-2')
+  }
+  if (idx >= 14 && idx <= 20) {
+    evt.target.classList.add('fall-3')
+  }
+  if (idx >= 21 && idx <= 27) {
+    evt.target.classList.add('fall-4')
+  }
+  console.log(idx);
+  if (idx >= 28 && idx <= 34) {
+    evt.target.classList.add('fall-5')
+  }
+  if (idx >= 35) {
+    evt.target.classList.add('fall-6')
+  }
 }
 
 function placePiece(idx) {

@@ -92,13 +92,78 @@ h3 {
   border: solid 2px black;
 }
 
-.fall {
-  animation: fall-animation 1s ;
+.fall-1 {
+  animation: fall-animation-row-1 0.5s ;
 }
 
-@keyframes fall-animation {
+@keyframes fall-animation-row-1 {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall-2 {
+  animation: fall-animation-row-2 0.5s ;
+}
+
+@keyframes fall-animation-row-2 {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall-3 {
+  animation: fall-animation-row-3 0.5s ;
+}
+
+@keyframes fall-animation-row-3 {
+  from {
+    transform: translateY(-300%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall-4 {
+  animation: fall-animation-row-4 0.5s ;
+}
+
+@keyframes fall-animation-row-4 {
+  from {
+    transform: translateY(-400%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall-5 {
+  animation: fall-animation-row-5 0.5s ;
+}
+
+@keyframes fall-animation-row-5 {
   from {
     transform: translateY(-500%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fall-6 {
+  animation: fall-animation-row-6 0.5s ;
+}
+
+@keyframes fall-animation-row-6 {
+  from {
+    transform: translateY(-600%);
   }
   to {
     transform: translateY(0);
