@@ -39,7 +39,8 @@ div.bg-gr {
 
 section#background-grid {
   position: absolute;
-  z-index: -1;
+  pointer-events: none;
+  z-index: 1;
 }
 
 h1 {

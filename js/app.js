@@ -212,7 +212,6 @@ function animatePiece(evt, idx) {
   if (idx >= 21 && idx <= 27) {
     evt.target.classList.add('fall-4')
   }
-  console.log(idx);
   if (idx >= 28 && idx <= 34) {
     evt.target.classList.add('fall-5')
   }
