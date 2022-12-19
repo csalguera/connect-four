@@ -21,6 +21,7 @@ section#grid {
   grid-template-rows: repeat(6, 10vmin);
   grid-gap: 0vmin;
   cursor: pointer;
+  margin: 10px auto;
 }
 
 div.gr {
@@ -28,10 +29,6 @@ div.gr {
   border: 3px solid yellow;
   border-radius: 50%;
   vertical-align: middle;
-}
-
-section#grid {
-  margin: 10px auto;
 }
 
 h1 {
@@ -82,4 +79,17 @@ h3 {
 
 #reset-btn:hover {
   border: solid 2px black;
+}
+
+.fall {
+  animation: fall-animation 5s ;
+}
+
+@keyframes fall-animation {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
