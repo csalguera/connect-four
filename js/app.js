@@ -366,4 +366,7 @@ function changeResetBtnStyle(evt) {
   resetBtn.addEventListener('mouseup', () => {
     evt.target.style.filter = ''
   })
+  resetBtn.addEventListener('mouseout', () => {
+    evt.target.style.filter = ''
+  })
 }
