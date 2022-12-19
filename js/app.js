@@ -186,7 +186,7 @@ function handleClick(evt) {
   placePiece(grIdx)
   checkForTie()
   checkForWinner()
-  switchPlayerTurn()
+  switchPlayerTurn(grIdx)
   render()
 }
 
@@ -350,8 +350,15 @@ function checkForWinner() {
   })
 }
 
-function switchPlayerTurn() {
+function switchPlayerTurn(idx) {
   if (winner) return
+  if (grid[idx] && grid[idx - 35]) return
+  if (grid[idx + 7] && grid[idx - 28]) return
+  if (grid[idx + 14] && grid[idx - 21]) return
+  if (grid[idx + 21] && grid[idx - 14]) return
+  if (grid[idx + 28] && grid[idx - 7]) return
+  if (grid[idx + 35] && grid[idx]) return
+  console.log('switch');
   turn *= -1
 }
 
