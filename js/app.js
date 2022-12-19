@@ -178,7 +178,12 @@ function updateResetBtn() {
 function updateGridClass() {
   if (winner || tie) {
     gridEls.forEach(gr => {
-      gr.classList.remove('fall')
+      gr.classList.remove('fall-1')
+      gr.classList.remove('fall-2')
+      gr.classList.remove('fall-3')
+      gr.classList.remove('fall-4')
+      gr.classList.remove('fall-5')
+      gr.classList.remove('fall-6')
     })
   }
 }
