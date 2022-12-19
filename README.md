@@ -8,11 +8,14 @@
 
 # [Launch Game](https://csalguera-connect-four.netlify.app/)
 
+### Features
+- Browser-based game of Connect Four
+- Local Multiplayer
+- Scoreboard to keep track of player 1 and 2 scores
+- Click to place piece on column from any row
+- Includes animation when pieces are placed
+
 ### To-do:
-- fix placePiece function to allow placement of pieces regardless of row clicked
-- fix switchPlayerTurn function when clicking on occupied spot
-  - has to do with placing pieces above the row that was clicked on
-- add favicon
 - add more styling
 - add art
 - add sound effects
