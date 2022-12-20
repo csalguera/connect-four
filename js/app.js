@@ -209,11 +209,25 @@ function animatePiece(evt, idx) {
   if (idx >= 14 && idx <= 20) {
     evt.target.classList.add('fall-3')
   }
-  if (idx >= 21 && idx <= 27) {
-    evt.target.classList.add('fall-4')
-  }
+  if (idx >= 21 && idx <= 27) animateFromRow4(idx)
   if (idx >= 28 && idx <= 34) animateFromRow5(idx)
   if (idx >= 35) animateFromRow6(idx)
+}
+
+function animateFromRow4(idx) {
+  if (grid[idx + 14] && !grid[idx + 7]) {
+    gridEls[idx + 14].classList.add('fall-6')
+  } else if (grid[idx + 7] && !grid[idx]) {
+    gridEls[idx + 7].classList.add('fall-5')
+  } else if (grid[idx] && !grid[idx - 7]) {
+    gridEls[idx].classList.add('fall-4')
+  } else if (grid[idx - 7] && !grid[idx - 14]) {
+    gridEls[idx - 7].classList.add('fall-3')
+  } else if (grid[idx - 14] && !grid[idx - 21]) {
+    gridEls[idx - 14].classList.add('fall-2')
+  } else if (grid[idx - 21]) {
+    gridEls[idx - 21].classList.add('fall-1')
+  }
 }
 
 function animateFromRow5(idx) {
@@ -227,7 +241,7 @@ function animateFromRow5(idx) {
     gridEls[idx - 14].classList.add('fall-3')
   } else if (grid[idx - 21] && !grid[idx - 28]) {
     gridEls[idx - 21].classList.add('fall-2')
-  } else if (grid[idx - 28] && !grid[idx - 35]) {
+  } else if (grid[idx - 28]) {
     gridEls[idx - 28].classList.add('fall-1')
   }
 }
