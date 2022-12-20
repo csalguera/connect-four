@@ -110,6 +110,7 @@ let turn
 let grid
 let p1Score = 0
 let p2Score = 0
+let clickDisable = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
@@ -191,15 +192,23 @@ function updateGridClass() {
 }
 
 function handleClick(evt) {
-  const grIdx = parseInt(evt.target.id.replace('gr', ''))
-  if (winner) return
-  placePiece(grIdx)
-  animatePiece(grIdx)
-  allAudio.playPieceSFX()
-  checkForTie()
-  checkForWinner()
-  switchPlayerTurn(grIdx)
-  render()
+  if (!clickDisable) {
+    clickDisable = true
+    const grIdx = parseInt(evt.target.id.replace('gr', ''))
+    if (winner) return
+    placePiece(grIdx)
+    animatePiece(grIdx)
+    allAudio.playPieceSFX()
+    checkForTie()
+    checkForWinner()
+    switchPlayerTurn(grIdx)
+    render()
+    setTimeout(clickEnable, 500)
+  }
+}
+
+function clickEnable() {
+  clickDisable = false
 }
 
 function animatePiece(idx) {
