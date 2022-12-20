@@ -111,6 +111,7 @@ let grid
 let p1Score = 0
 let p2Score = 0
 let clickDisable = false
+let allowSwitch = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
@@ -195,15 +196,15 @@ function handleClick(evt) {
   if (!clickDisable) {
     clickDisable = true
     const grIdx = parseInt(evt.target.id.replace('gr', ''))
-    if (winner) return
+    if (winner || tie) return
     placePiece(grIdx)
     animatePiece(grIdx)
     allAudio.playPieceSFX()
     checkForTie()
     checkForWinner()
     switchPlayerTurn(grIdx)
+    setTimeout(clickEnable, 600)
     render()
-    setTimeout(clickEnable, 500)
   }
 }
 

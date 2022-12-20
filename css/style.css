@@ -173,3 +173,21 @@ h3 {
     transform: translateY(0);
   }
 }
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: 32px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  #score-board > h3,
+  #reset-btn {
+    font-size: 20px;
+  }
+  section#grid, section#background-grid {
+    grid-template-columns: repeat(7, 11vmin);
+    grid-template-rows: repeat(6, 11vmin);
+    grid-gap: 2vmin;
+  }
+}
