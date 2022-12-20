@@ -19,7 +19,6 @@
 - add more styling
 - add art
 - add sound effects
-- add animations
 
 ### Attributions
-- [Background Image]("https://www.freepik.com/free-vector/gradient-grainy-gradient-texture_14485901.htm#query=background&position=11&from_view=keyword")
+- [Background Image](https://www.freepik.com/free-vector/gradient-grainy-gradient-texture_14485901.htm#query=background&position=11&from_view=keyword)
