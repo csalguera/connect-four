@@ -200,18 +200,24 @@ function handleClick(evt) {
 }
 
 function animatePiece(evt, idx) {
-  if (idx <= 6) {
-    evt.target.classList.add('fall-1')
-  }
-  if (idx >= 7 && idx <= 13) {
-    evt.target.classList.add('fall-2')
-  }
-  if (idx >= 14 && idx <= 20) {
-    evt.target.classList.add('fall-3')
-  }
+  if (idx <= 6) animateFromRow1(idx)
+  if (idx >= 7 && idx <= 13) animateFromRow2(idx)
+  if (idx >= 14 && idx <= 20) animateFromRow3(idx)
   if (idx >= 21 && idx <= 27) animateFromRow4(idx)
   if (idx >= 28 && idx <= 34) animateFromRow5(idx)
   if (idx >= 35) animateFromRow6(idx)
+}
+
+function animateFromRow1(idx) {
+  
+}
+
+function animateFromRow2(idx) {
+  
+}
+
+function animateFromRow3(idx) {
+
 }
 
 function animateFromRow4(idx) {
