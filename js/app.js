@@ -195,6 +195,7 @@ function handleClick(evt) {
   if (winner) return
   placePiece(grIdx)
   animatePiece(grIdx)
+  allAudio.playPieceSFX()
   checkForTie()
   checkForWinner()
   switchPlayerTurn(grIdx)
