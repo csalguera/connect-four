@@ -1,4 +1,6 @@
 // Constants ---------------------------------------------------------------
+import * as allAudio from './audio.js'
+
 const winningCombos = [
   // Row 1: Horizontal Combos
   [0, 1, 2, 3],
