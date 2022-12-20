@@ -103,6 +103,8 @@ const messageEl = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-btn')
 const player1Score = document.querySelector('#p1Sc')
 const player2Score = document.querySelector('#p2Sc')
+const musicBtn = document.querySelector('#music-button')
+const sfxBtn = document.querySelector('#sfx-button')
 // Variables ---------------------------------------------------------------
 let winner
 let tie 
@@ -111,11 +113,11 @@ let grid
 let p1Score = 0
 let p2Score = 0
 let clickDisable = false
-let allowSwitch = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
 resetBtn.addEventListener('mousedown', changeResetBtnStyle)
+musicBtn.addEventListener('click', controlMusic)
 // Functions ---------------------------------------------------------------
 
 init()
@@ -504,5 +506,17 @@ function changeResetBtnStyle(evt) {
   })
   resetBtn.addEventListener('mouseover', () => {
     evt.target.style.filter = 'brightness(75%)'
+  })
+}
+
+function controlMusic() {
+  if (musicBtn.textContent === 'Music: OFF') {
+    musicBtn.textContent = 'Music: ON'
+  } else {
+    musicBtn.textContent = 'Music: OFF'
+  }
+  allAudio.playBGM()
+  musicBtn.addEventListener('click', ()=> {
+    allAudio.muteBGM()
   })
 }

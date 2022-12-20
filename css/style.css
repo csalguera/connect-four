@@ -53,14 +53,21 @@ h1 {
   padding: 10px;
 }
 
-#mute-music,
-#mute-sfx {
+#music-button,
+#sfx-button {
   font-size: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   border-radius: 100px;
   color: yellow;
   padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#music-button:hover,
+#sfx-button:hover {
+  background-color: rgba(0, 0, 0, 1);
 }
 
 h2 {
