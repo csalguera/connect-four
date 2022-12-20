@@ -16,13 +16,22 @@ function muteBGM() {
   }
 }
 
-function playPieceSFX() {
+function playSFX() {
   pieceSoundEffect.volume = 0.5
   pieceSoundEffect.play()
+}
+
+function muteSFX() {
+  if (pieceSoundEffect.volume > 0) {
+    pieceSoundEffect.volume = 0
+  } else {
+    pieceSoundEffect.volume = 0.05
+  }
 }
 
 export {
   playBGM,
   muteBGM,
-  playPieceSFX
+  playSFX,
+  muteSFX
 }

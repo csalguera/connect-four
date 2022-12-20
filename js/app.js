@@ -113,11 +113,13 @@ let grid
 let p1Score = 0
 let p2Score = 0
 let clickDisable = false
+let sfxMuted = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gr => gr.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
 resetBtn.addEventListener('mousedown', changeResetBtnStyle)
 musicBtn.addEventListener('click', controlMusic)
+sfxBtn.addEventListener('click', sfxStatus)
 // Functions ---------------------------------------------------------------
 
 init()
@@ -201,7 +203,11 @@ function handleClick(evt) {
     if (winner || tie) return
     placePiece(grIdx)
     animatePiece(grIdx)
-    allAudio.playPieceSFX()
+    if (!sfxMuted) {
+      allAudio.playSFX()
+    } else {
+      allAudio.muteSFX()
+    }
     checkForTie()
     checkForWinner()
     switchPlayerTurn(grIdx)
@@ -519,4 +525,17 @@ function controlMusic() {
   musicBtn.addEventListener('click', ()=> {
     allAudio.muteBGM()
   })
+}
+
+function sfxStatus() {
+  if (!sfxMuted) {
+    sfxMuted = true
+  } else {
+    sfxMuted = false
+  }
+  if (sfxBtn.textContent === 'SFX: ON') {
+    sfxBtn.textContent = 'SFX: OFF'
+  } else {
+    sfxBtn.textContent = 'SFX: ON'
+  }
 }
