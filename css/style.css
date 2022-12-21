@@ -221,31 +221,31 @@ h3 {
   }
 }
 
-.row-1 {
-  animation: highlight-p1 1s infinite;
+.row-1-p1 {
+  animation: highlight-row-p1 1s infinite;
 }
 
-.row-2 {
-  animation: highlight-p1 1s infinite;
+.row-2-p1 {
+  animation: highlight-row-p1 1s infinite;
 }
 
-.row-3 {
-  animation: highlight-p1 1s infinite;
+.row-3-p1 {
+  animation: highlight-row-p1 1s infinite;
 }
 
-.row-4 {
-  animation: highlight-p1 1s infinite;
+.row-4-p1 {
+  animation: highlight-row-p1 1s infinite;
 }
 
-.row-5 {
-  animation: highlight-p1 1s infinite;
+.row-5-p1 {
+  animation: highlight-row-p1 1s infinite;
 }
 
-.row-6 {
-  animation: highlight-p1 1s infinite;
+.row-6-p1 {
+  animation: highlight-row-p1 1s infinite;
 }
 
-@keyframes highlight-p1 {
+@keyframes highlight-row-p1 {
   from {
     background-color: transparent;
     border-radius: 100px;
@@ -255,7 +255,32 @@ h3 {
     border-radius: 100px;
   }
 }
-@keyframes highlight-p2 {
+
+.row-1-p2 {
+  animation: highlight-row-p2 1s infinite;
+}
+
+.row-2-p2 {
+  animation: highlight-row-p2 1s infinite;
+}
+
+.row-3-p2 {
+  animation: highlight-row-p2 1s infinite;
+}
+
+.row-4-p2 {
+  animation: highlight-row-p2 1s infinite;
+}
+
+.row-5-p2 {
+  animation: highlight-row-p2 1s infinite;
+}
+
+.row-6-p2 {
+  animation: highlight-row-p2 1s infinite;
+}
+
+@keyframes highlight-row-p2 {
   from {
     background-color: transparent;
     border-radius: 100px;

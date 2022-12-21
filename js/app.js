@@ -105,6 +105,7 @@ const player1Score = document.querySelector('#p1Sc')
 const player2Score = document.querySelector('#p2Sc')
 const musicBtn = document.querySelector('#music-button')
 const sfxBtn = document.querySelector('#sfx-button')
+const rowEls = document.querySelectorAll('.row')
 // Variables ---------------------------------------------------------------
 let winner
 let tie 
@@ -115,11 +116,13 @@ let p2Score = 0
 let clickDisable = false
 let sfxMuted = false
 // Event Listeners ---------------------------------------------------------
-gridEls.forEach(gr => gr.addEventListener('click', handleClick))
+gridEls.forEach(gridEl => gridEl.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', init)
 resetBtn.addEventListener('mousedown', changeResetBtnStyle)
 musicBtn.addEventListener('click', controlMusic)
 sfxBtn.addEventListener('click', sfxStatus)
+gridEls.forEach(gridEl => gridEl.addEventListener('mouseover', handleMouseOver))
+gridEls.forEach(gridEl => gridEl.addEventListener('mouseout', handleMouseOut))
 // Functions ---------------------------------------------------------------
 
 init()
@@ -538,4 +541,102 @@ function sfxStatus() {
   } else {
     sfxBtn.textContent = 'SFX: ON'
   }
+}
+
+function handleMouseOver(evt) {
+  const grIdx = parseInt(evt.target.id.replace('gr', ''))
+  if (grIdx <= 6) mouseOverRow1()
+  if (grIdx >= 7 && grIdx <= 13) mouseOverRow2()
+  if (grIdx >= 14 && grIdx <= 20) mouseOverRow3()
+  if (grIdx >= 21 && grIdx <= 27) mouseOverRow4()
+  if (grIdx >= 28 && grIdx <= 34) mouseOverRow5()
+  if (grIdx >= 35) mouseOverRow6()
+}
+
+function mouseOverRow1() {
+  if (turn === 1) {
+    rowEls[0].classList.add('row-1-p1')
+  } else {
+    rowEls[0].classList.add('row-1-p2')
+  }
+}
+
+function mouseOverRow2() {
+  if (turn === 1) {
+    rowEls[1].classList.add('row-2-p1')
+  } else {
+    rowEls[1].classList.add('row-2-p2')
+  }
+}
+
+function mouseOverRow3() {
+  if (turn === 1) {
+    rowEls[2].classList.add('row-3-p1')
+  } else {
+    rowEls[2].classList.add('row-3-p2')
+  }
+}
+
+function mouseOverRow4() {
+  if (turn === 1) {
+    rowEls[3].classList.add('row-4-p1')
+  } else {
+    rowEls[3].classList.add('row-4-p2')
+  }
+}
+
+function mouseOverRow5() {
+  if (turn === 1) {
+    rowEls[4].classList.add('row-5-p1')
+  } else {
+    rowEls[4].classList.add('row-5-p2')
+  }
+}
+
+function mouseOverRow6() {
+  if (turn === 1) {
+    rowEls[5].classList.add('row-6-p1')
+  } else {
+    rowEls[5].classList.add('row-6-p2')
+  }
+}
+
+function handleMouseOut(evt) {
+  const grIdx = parseInt(evt.target.id.replace('gr', ''))
+  if (grIdx <= 6) mouseOutRow1()
+  if (grIdx >= 7 && grIdx <= 13) mouseOutRow2()
+  if (grIdx >= 14 && grIdx <= 20) mouseOutRow3()
+  if (grIdx >= 21 && grIdx <= 27) mouseOutRow4()
+  if (grIdx >= 28 && grIdx <= 34) mouseOutRow5()
+  if (grIdx >= 35) mouseOutRow6()
+}
+
+function mouseOutRow1() {
+  rowEls[0].classList.remove('row-1-p1')
+  rowEls[0].classList.remove('row-1-p2')
+}
+
+function mouseOutRow2() {
+  rowEls[1].classList.remove('row-2-p1')
+  rowEls[1].classList.remove('row-2-p2')
+}
+
+function mouseOutRow3() {
+  rowEls[2].classList.remove('row-3-p1')
+  rowEls[2].classList.remove('row-3-p2')
+}
+
+function mouseOutRow4() {
+  rowEls[3].classList.remove('row-4-p1')
+  rowEls[3].classList.remove('row-4-p2')
+}
+
+function mouseOutRow5() {
+  rowEls[4].classList.remove('row-5-p1')
+  rowEls[4].classList.remove('row-5-p2')
+}
+
+function mouseOutRow6() {
+  rowEls[5].classList.remove('row-6-p1')
+  rowEls[5].classList.remove('row-6-p2')
 }
