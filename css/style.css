@@ -16,6 +16,7 @@ body {
   background-image: url(../assets/images/5476306.jpg);
   background-size: stretch;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 #grids {
@@ -77,6 +78,12 @@ h1 {
   margin-top: 0;
 }
 
+#sound-control {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 #music-button,
 #sfx-button {
   font-size: 20px;
@@ -85,8 +92,8 @@ h1 {
   border-radius: 100px;
   color: yellow;
   padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
 }
 
 #music-button:hover,
@@ -438,7 +445,7 @@ h3 {
   }
   #score-board > h3,
   #reset-btn {
-    font-size: 20px;
+    font-size: 16px;
   }
   section#grid,
   section#background-grid {

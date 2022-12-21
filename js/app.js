@@ -187,6 +187,27 @@ function updateResetBtn() {
   }
 }
 
+function updateGridClass() {
+  if (winner || tie) {
+    gridEls.forEach(gridEl => {
+      gridEl.classList.remove(
+        'fall-1',
+        'fall-2',
+        'fall-3',
+        'fall-4',
+        'fall-5',
+        'fall-6',
+        'reset-1',
+        'reset-2',
+        'reset-3',
+        'reset-4',
+        'reset-5',
+        'reset-6'
+        )
+    })
+  }
+}
+
 function clearGrid() {
   if (winner || tie) {
     clearRow1()
@@ -200,8 +221,8 @@ function clearGrid() {
     } else {
       allAudio.muteReset()
     }
-    setTimeout(updateGridClass, 1000)
-    setTimeout(init, 1000)
+    setTimeout(updateGridClass, 900)
+    setTimeout(init, 900)
   }
 }
 
@@ -265,27 +286,6 @@ function clearRow6() {
   gridEls[41].classList.add('reset-6')
 }
 
-function updateGridClass() {
-  if (winner || tie) {
-    gridEls.forEach(gridEl => {
-      gridEl.classList.remove(
-        'fall-1',
-        'fall-2',
-        'fall-3',
-        'fall-4',
-        'fall-5',
-        'fall-6',
-        'reset-1',
-        'reset-2',
-        'reset-3',
-        'reset-4',
-        'reset-5',
-        'reset-6'
-        )
-    })
-  }
-}
-
 function handleClick(evt) {
   if (!clickDisable) {
     clickDisable = true
@@ -298,10 +298,10 @@ function handleClick(evt) {
     } else {
       allAudio.muteClick()
     }
+    setTimeout(clickEnable, 600)
     checkForTie()
     checkForWinner()
     switchPlayerTurn(grIdx)
-    setTimeout(clickEnable, 600)
     render()
   }
 }
