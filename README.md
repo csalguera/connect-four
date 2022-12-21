@@ -11,7 +11,7 @@
 ### Features:
 - Browser-based game of Connect Four
 - Includes highlight animation when hovering over rows and columns </br>
-![image](https://i.imgur.com/F9ymUj2.gifv)
+![image](https://i.imgur.com/F9ymUj2.gif)
 - Includes animation when pieces are placed
 - Local Multiplayer
 - Scoreboard to keep track of player 1 and 2 scores
