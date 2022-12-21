@@ -1,22 +1,23 @@
-### Connect Four
+# Connect Four
 
 ### Objective:
 - Build a Browser-based Game of Connect Four
 - Include win/loss logic
-- Render messages based upon current state of game (win, tie, in progress)
+- Render messages based upon current state of game (win, tie, current player-turn)
 - Include separate HTML, CSS, and JavaScript data files
 
-# <a href='https://csalguera-connect-four.netlify.app/' target='_blank'>Launch Game</a>
+# <a href='https://csalguera-connect-four.netlify.app/' target='_blank'><img src="./assets/images/connect-four-favicon.png" width="25px"> Launch Game</a>
 
 ### Features:
-- Browser-based game of Connect Four
-- Includes highlight animation when hovering over rows and columns </br>
-![Imgur](https://imgur.com/wmMGYBr.gif)
-- Includes animation when pieces are placed
 - Local Multiplayer
+- Includes highlight animation when hovering over rows and columns: </br>
+![Imgur](https://imgur.com/Ql8nCOe.gif)
+- Includes animation when pieces are placed: </br>
+![drop animation](https://i.imgur.com/OgREiVm.gif)
 - Scoreboard to keep track of player 1 and 2 scores
-- Includes background music (muted by default), attributed below
-- Includes sound effects when placing a piece (unmuted by default)
+- Includes background music, [attributed below](#attributions)
+- Includes sound effects when placing a piece
+- Includes audio controls to mute/unmute music or sfx (music muted by default, sfx unmuted by default)
 
 ### Technologies Used:
 - HTML
