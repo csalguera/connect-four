@@ -208,9 +208,9 @@ function handleClick(evt) {
     placePiece(grIdx)
     animatePiece(grIdx)
     if (!sfxMuted) {
-      allAudio.playSFX()
+      allAudio.playClick()
     } else {
-      allAudio.muteSFX()
+      allAudio.muteClick()
     }
     checkForTie()
     checkForWinner()
@@ -559,6 +559,11 @@ function handleMouseOver(evt) {
   if ((grIdx - 4) === 0 || !((grIdx - 4) % 7)) mouseOverColumn5()
   if ((grIdx - 5) === 0 || !((grIdx - 5) % 7)) mouseOverColumn6()
   if ((grIdx - 6) === 0 || !((grIdx - 6) % 7)) mouseOverColumn7()
+  if (!sfxMuted) {
+    allAudio.playHover()
+  } else {
+    allAudio.muteHover()
+  }
 }
 
 function mouseOverRow1() {
