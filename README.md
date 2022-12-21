@@ -10,10 +10,11 @@
 
 ### Features:
 - Browser-based game of Connect Four
+- Includes highlight animation when hovering over rows and columns </br>
+![image](https://i.imgur.com/F9ymUj2.gifv)
+- Includes animation when pieces are placed
 - Local Multiplayer
 - Scoreboard to keep track of player 1 and 2 scores
-- Click to place piece on column from any row
-- Includes animation when pieces are placed
 - Includes background music (muted by default), attributed below
 - Includes sound effects when placing a piece (unmuted by default)
 
@@ -24,7 +25,6 @@
 
 ### To-do:
 - when win condition is fulfilled, animation should still play
-- add hovering effects
 
 ### Next Steps:
 - add animation when game is reset
