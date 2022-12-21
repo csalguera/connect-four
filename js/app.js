@@ -106,6 +106,7 @@ const player2Score = document.querySelector('#p2Sc')
 const musicBtn = document.querySelector('#music-button')
 const sfxBtn = document.querySelector('#sfx-button')
 const rowEls = document.querySelectorAll('.row')
+const columnEls = document.querySelectorAll('.column')
 // Variables ---------------------------------------------------------------
 let winner
 let tie 
@@ -551,6 +552,13 @@ function handleMouseOver(evt) {
   if (grIdx >= 21 && grIdx <= 27) mouseOverRow4()
   if (grIdx >= 28 && grIdx <= 34) mouseOverRow5()
   if (grIdx >= 35) mouseOverRow6()
+  if (grIdx === 0 || !(grIdx % 7)) mouseOverColumn1()
+  if ((grIdx - 1) === 0 || !((grIdx - 1) % 7)) mouseOverColumn2()
+  if ((grIdx - 2) === 0 || !((grIdx - 2) % 7)) mouseOverColumn3()
+  if ((grIdx - 3) === 0 || !((grIdx - 3) % 7)) mouseOverColumn4()
+  if ((grIdx - 4) === 0 || !((grIdx - 4) % 7)) mouseOverColumn5()
+  if ((grIdx - 5) === 0 || !((grIdx - 5) % 7)) mouseOverColumn6()
+  if ((grIdx - 6) === 0 || !((grIdx - 6) % 7)) mouseOverColumn7()
 }
 
 function mouseOverRow1() {
@@ -601,6 +609,62 @@ function mouseOverRow6() {
   }
 }
 
+function mouseOverColumn1() {
+  if (turn === 1) {
+    columnEls[0].classList.add('column-1-p1')
+  } else {
+    columnEls[0].classList.add('column-1-p2')
+  }
+}
+
+function mouseOverColumn2() {
+  if (turn === 1) {
+    columnEls[1].classList.add('column-2-p1')
+  } else {
+    columnEls[1].classList.add('column-2-p2')
+  }
+}
+
+function mouseOverColumn3() {
+  if (turn === 1) {
+    columnEls[2].classList.add('column-3-p1')
+  } else {
+    columnEls[2].classList.add('column-3-p2')
+  }
+}
+
+function mouseOverColumn4() {
+  if (turn === 1) {
+    columnEls[3].classList.add('column-4-p1')
+  } else {
+    columnEls[3].classList.add('column-4-p2')
+  }
+}
+
+function mouseOverColumn5() {
+  if (turn === 1) {
+    columnEls[4].classList.add('column-5-p1')
+  } else {
+    columnEls[4].classList.add('column-5-p2')
+  }
+}
+
+function mouseOverColumn6() {
+  if (turn === 1) {
+    columnEls[5].classList.add('column-6-p1')
+  } else {
+    columnEls[5].classList.add('column-6-p2')
+  }
+}
+
+function mouseOverColumn7() {
+  if (turn === 1) {
+    columnEls[6].classList.add('column-7-p1')
+  } else {
+    columnEls[6].classList.add('column-7-p2')
+  }
+}
+
 function handleMouseOut(evt) {
   const grIdx = parseInt(evt.target.id.replace('gr', ''))
   if (grIdx <= 6) mouseOutRow1()
@@ -609,6 +673,13 @@ function handleMouseOut(evt) {
   if (grIdx >= 21 && grIdx <= 27) mouseOutRow4()
   if (grIdx >= 28 && grIdx <= 34) mouseOutRow5()
   if (grIdx >= 35) mouseOutRow6()
+  if (grIdx === 0 || !(grIdx % 7)) mouseOutColumn1()
+  if ((grIdx - 1) === 0 || !((grIdx - 1) % 7)) mouseOutColumn2()
+  if ((grIdx - 2) === 0 || !((grIdx - 2) % 7)) mouseOutColumn3()
+  if ((grIdx - 3) === 0 || !((grIdx - 3) % 7)) mouseOutColumn4()
+  if ((grIdx - 4) === 0 || !((grIdx - 4) % 7)) mouseOutColumn5()
+  if ((grIdx - 5) === 0 || !((grIdx - 5) % 7)) mouseOutColumn6()
+  if ((grIdx - 6) === 0 || !((grIdx - 6) % 7)) mouseOutColumn7()
 }
 
 function mouseOutRow1() {
@@ -639,4 +710,39 @@ function mouseOutRow5() {
 function mouseOutRow6() {
   rowEls[5].classList.remove('row-6-p1')
   rowEls[5].classList.remove('row-6-p2')
+}
+
+function mouseOutColumn1() {
+  columnEls[0].classList.remove('column-1-p1')
+  columnEls[0].classList.remove('column-1-p2')
+}
+
+function mouseOutColumn2() {
+  columnEls[1].classList.remove('column-2-p1')
+  columnEls[1].classList.remove('column-2-p2')
+}
+
+function mouseOutColumn3() {
+  columnEls[2].classList.remove('column-3-p1')
+  columnEls[2].classList.remove('column-3-p2')
+}
+
+function mouseOutColumn4() {
+  columnEls[3].classList.remove('column-4-p1')
+  columnEls[3].classList.remove('column-4-p2')
+}
+
+function mouseOutColumn5() {
+  columnEls[4].classList.remove('column-5-p1')
+  columnEls[4].classList.remove('column-5-p2')
+}
+
+function mouseOutColumn6() {
+  columnEls[5].classList.remove('column-6-p1')
+  columnEls[5].classList.remove('column-6-p2')
+}
+
+function mouseOutColumn7() {
+  columnEls[6].classList.remove('column-7-p1')
+  columnEls[6].classList.remove('column-7-p2')
 }
