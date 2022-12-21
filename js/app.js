@@ -101,8 +101,8 @@ const winningCombos = [
 const gridEls = document.querySelectorAll('.gr')
 const messageEl = document.querySelector('#message')
 const resetBtn = document.querySelector('#reset-btn')
-const player1Score = document.querySelector('#p1Sc')
-const player2Score = document.querySelector('#p2Sc')
+const player1Score = document.querySelector('#p1Score')
+const player2Score = document.querySelector('#p2Score')
 const musicBtn = document.querySelector('#music-button')
 const sfxBtn = document.querySelector('#sfx-button')
 const rowEls = document.querySelectorAll('.row')
@@ -121,7 +121,7 @@ gridEls.forEach(gridEl => gridEl.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', clearGrid)
 resetBtn.addEventListener('mousedown', changeResetBtnStyle)
 musicBtn.addEventListener('click', controlMusic)
-sfxBtn.addEventListener('click', sfxStatus)
+sfxBtn.addEventListener('click', controlSFX)
 gridEls.forEach(gridEl => gridEl.addEventListener('mouseover', handleMouseOver))
 gridEls.forEach(gridEl => gridEl.addEventListener('mouseout', handleMouseOut))
 // Functions ---------------------------------------------------------------
@@ -291,6 +291,7 @@ function handleClick(evt) {
     clickDisable = true
     const grIdx = parseInt(evt.target.id.replace('gr', ''))
     if (winner || tie) return
+    setTimeout(clickEnable, 600)
     placePiece(grIdx)
     animatePiece(grIdx)
     if (!sfxMuted) {
@@ -298,7 +299,6 @@ function handleClick(evt) {
     } else {
       allAudio.muteClick()
     }
-    setTimeout(clickEnable, 600)
     checkForTie()
     checkForWinner()
     switchPlayerTurn(grIdx)
@@ -308,111 +308,6 @@ function handleClick(evt) {
 
 function clickEnable() {
   clickDisable = false
-}
-
-function animatePiece(idx) {
-  if (idx <= 6) animateFromRow1(idx)
-  if (idx >= 7 && idx <= 13) animateFromRow2(idx)
-  if (idx >= 14 && idx <= 20) animateFromRow3(idx)
-  if (idx >= 21 && idx <= 27) animateFromRow4(idx)
-  if (idx >= 28 && idx <= 34) animateFromRow5(idx)
-  if (idx >= 35) animateFromRow6(idx)
-}
-
-function animateFromRow1(idx) {
-  if (grid[idx + 35] && !grid[idx + 28]) {
-    gridEls[idx + 35].classList.add('fall-6')
-  } else if (grid[idx + 28] && !grid[idx + 21]) {
-    gridEls[idx + 28].classList.add('fall-5')
-  } else if (grid[idx + 21] && !grid[idx + 14]) {
-    gridEls[idx + 21].classList.add('fall-4')
-  } else if (grid[idx + 14] && !grid[idx + 7]) {
-    gridEls[idx + 14].classList.add('fall-3')
-  } else if (grid[idx + 7] && !grid[idx]) {
-    gridEls[idx + 7].classList.add('fall-2')
-  } else if (grid[idx]) {
-    gridEls[idx].classList.add('fall-1')
-  }
-}
-
-function animateFromRow2(idx) {
-  if (grid[idx + 28] && !grid[idx + 21]) {
-    gridEls[idx + 28].classList.add('fall-6')
-  } else if (grid[idx + 21] && !grid[idx + 14]) {
-    gridEls[idx + 21].classList.add('fall-5')
-  } else if (grid[idx + 14] && !grid[idx + 7]) {
-    gridEls[idx + 14].classList.add('fall-4')
-  } else if (grid[idx + 7] && !grid[idx]) {
-    gridEls[idx + 7].classList.add('fall-3')
-  } else if (grid[idx] && !grid[idx - 7]) {
-    gridEls[idx].classList.add('fall-2')
-  } else if (grid[idx - 7]) {
-    gridEls[idx - 7].classList.add('fall-1')
-  }
-}
-
-function animateFromRow3(idx) {
-  if (grid[idx + 21] && !grid[idx + 14]) {
-    gridEls[idx + 21].classList.add('fall-6')
-  } else if (grid[idx + 14] && !grid[idx + 7]) {
-    gridEls[idx + 14].classList.add('fall-5')
-  } else if (grid[idx + 7] && !grid[idx]) {
-    gridEls[idx + 7].classList.add('fall-4')
-  } else if (grid[idx] && !grid[idx - 7]) {
-    gridEls[idx].classList.add('fall-3')
-  } else if (grid[idx - 7] && !grid[idx - 14]) {
-    gridEls[idx - 7].classList.add('fall-2')
-  } else if (grid[idx - 14]) {
-    gridEls[idx - 14].classList.add('fall-1')
-  }
-}
-
-function animateFromRow4(idx) {
-  if (grid[idx + 14] && !grid[idx + 7]) {
-    gridEls[idx + 14].classList.add('fall-6')
-  } else if (grid[idx + 7] && !grid[idx]) {
-    gridEls[idx + 7].classList.add('fall-5')
-  } else if (grid[idx] && !grid[idx - 7]) {
-    gridEls[idx].classList.add('fall-4')
-  } else if (grid[idx - 7] && !grid[idx - 14]) {
-    gridEls[idx - 7].classList.add('fall-3')
-  } else if (grid[idx - 14] && !grid[idx - 21]) {
-    gridEls[idx - 14].classList.add('fall-2')
-  } else if (grid[idx - 21]) {
-    gridEls[idx - 21].classList.add('fall-1')
-  }
-}
-
-function animateFromRow5(idx) {
-  if (grid[idx + 7] && !grid[idx]) {
-    gridEls[idx + 7].classList.add('fall-6')
-  } else if (grid[idx] && !grid[idx - 7]) {
-    gridEls[idx].classList.add('fall-5')
-  } else if (grid[idx - 7] && !grid[idx - 14]) {
-    gridEls[idx - 7].classList.add('fall-4')
-  } else if (grid[idx - 14] && !grid[idx - 21]) {
-    gridEls[idx - 14].classList.add('fall-3')
-  } else if (grid[idx - 21] && !grid[idx - 28]) {
-    gridEls[idx - 21].classList.add('fall-2')
-  } else if (grid[idx - 28]) {
-    gridEls[idx - 28].classList.add('fall-1')
-  }
-}
-
-function animateFromRow6(idx) {
-  if (grid[idx] && !grid[idx - 7]) {
-    gridEls[idx].classList.add('fall-6')
-  } else if (grid[idx - 7] && !grid[idx - 14]) {
-    gridEls[idx - 7].classList.add('fall-5')
-  }  else if (grid[idx - 14] && !grid[idx -21]) {
-    gridEls[idx - 14].classList.add('fall-4')
-  }  else if (grid[idx - 21] && !grid[idx - 28]) {
-    gridEls[idx - 21].classList.add('fall-3')
-  }  else if (grid[idx - 28] && !grid[idx - 35]) {
-    gridEls[idx - 28].classList.add('fall-2')
-  }  else if (grid[idx - 35]) {
-    gridEls[idx - 35].classList.add('fall-1')
-  }
 }
 
 function placePiece(idx) {
@@ -559,6 +454,111 @@ function placeFromRow6(idx) {
   }
 }
 
+function animatePiece(idx) {
+  if (idx <= 6) animateFromRow1(idx)
+  if (idx >= 7 && idx <= 13) animateFromRow2(idx)
+  if (idx >= 14 && idx <= 20) animateFromRow3(idx)
+  if (idx >= 21 && idx <= 27) animateFromRow4(idx)
+  if (idx >= 28 && idx <= 34) animateFromRow5(idx)
+  if (idx >= 35) animateFromRow6(idx)
+}
+
+function animateFromRow1(idx) {
+  if (grid[idx + 35] && !grid[idx + 28]) {
+    gridEls[idx + 35].classList.add('fall-6')
+  } else if (grid[idx + 28] && !grid[idx + 21]) {
+    gridEls[idx + 28].classList.add('fall-5')
+  } else if (grid[idx + 21] && !grid[idx + 14]) {
+    gridEls[idx + 21].classList.add('fall-4')
+  } else if (grid[idx + 14] && !grid[idx + 7]) {
+    gridEls[idx + 14].classList.add('fall-3')
+  } else if (grid[idx + 7] && !grid[idx]) {
+    gridEls[idx + 7].classList.add('fall-2')
+  } else if (grid[idx]) {
+    gridEls[idx].classList.add('fall-1')
+  }
+}
+
+function animateFromRow2(idx) {
+  if (grid[idx + 28] && !grid[idx + 21]) {
+    gridEls[idx + 28].classList.add('fall-6')
+  } else if (grid[idx + 21] && !grid[idx + 14]) {
+    gridEls[idx + 21].classList.add('fall-5')
+  } else if (grid[idx + 14] && !grid[idx + 7]) {
+    gridEls[idx + 14].classList.add('fall-4')
+  } else if (grid[idx + 7] && !grid[idx]) {
+    gridEls[idx + 7].classList.add('fall-3')
+  } else if (grid[idx] && !grid[idx - 7]) {
+    gridEls[idx].classList.add('fall-2')
+  } else if (grid[idx - 7]) {
+    gridEls[idx - 7].classList.add('fall-1')
+  }
+}
+
+function animateFromRow3(idx) {
+  if (grid[idx + 21] && !grid[idx + 14]) {
+    gridEls[idx + 21].classList.add('fall-6')
+  } else if (grid[idx + 14] && !grid[idx + 7]) {
+    gridEls[idx + 14].classList.add('fall-5')
+  } else if (grid[idx + 7] && !grid[idx]) {
+    gridEls[idx + 7].classList.add('fall-4')
+  } else if (grid[idx] && !grid[idx - 7]) {
+    gridEls[idx].classList.add('fall-3')
+  } else if (grid[idx - 7] && !grid[idx - 14]) {
+    gridEls[idx - 7].classList.add('fall-2')
+  } else if (grid[idx - 14]) {
+    gridEls[idx - 14].classList.add('fall-1')
+  }
+}
+
+function animateFromRow4(idx) {
+  if (grid[idx + 14] && !grid[idx + 7]) {
+    gridEls[idx + 14].classList.add('fall-6')
+  } else if (grid[idx + 7] && !grid[idx]) {
+    gridEls[idx + 7].classList.add('fall-5')
+  } else if (grid[idx] && !grid[idx - 7]) {
+    gridEls[idx].classList.add('fall-4')
+  } else if (grid[idx - 7] && !grid[idx - 14]) {
+    gridEls[idx - 7].classList.add('fall-3')
+  } else if (grid[idx - 14] && !grid[idx - 21]) {
+    gridEls[idx - 14].classList.add('fall-2')
+  } else if (grid[idx - 21]) {
+    gridEls[idx - 21].classList.add('fall-1')
+  }
+}
+
+function animateFromRow5(idx) {
+  if (grid[idx + 7] && !grid[idx]) {
+    gridEls[idx + 7].classList.add('fall-6')
+  } else if (grid[idx] && !grid[idx - 7]) {
+    gridEls[idx].classList.add('fall-5')
+  } else if (grid[idx - 7] && !grid[idx - 14]) {
+    gridEls[idx - 7].classList.add('fall-4')
+  } else if (grid[idx - 14] && !grid[idx - 21]) {
+    gridEls[idx - 14].classList.add('fall-3')
+  } else if (grid[idx - 21] && !grid[idx - 28]) {
+    gridEls[idx - 21].classList.add('fall-2')
+  } else if (grid[idx - 28]) {
+    gridEls[idx - 28].classList.add('fall-1')
+  }
+}
+
+function animateFromRow6(idx) {
+  if (grid[idx] && !grid[idx - 7]) {
+    gridEls[idx].classList.add('fall-6')
+  } else if (grid[idx - 7] && !grid[idx - 14]) {
+    gridEls[idx - 7].classList.add('fall-5')
+  }  else if (grid[idx - 14] && !grid[idx -21]) {
+    gridEls[idx - 14].classList.add('fall-4')
+  }  else if (grid[idx - 21] && !grid[idx - 28]) {
+    gridEls[idx - 21].classList.add('fall-3')
+  }  else if (grid[idx - 28] && !grid[idx - 35]) {
+    gridEls[idx - 28].classList.add('fall-2')
+  }  else if (grid[idx - 35]) {
+    gridEls[idx - 35].classList.add('fall-1')
+  }
+}
+
 function checkForTie() {
   if (grid.some(val => !val)) {
     return
@@ -617,7 +617,7 @@ function controlMusic() {
   })
 }
 
-function sfxStatus() {
+function controlSFX() {
   if (!sfxMuted) {
     sfxMuted = true
   } else {

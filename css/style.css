@@ -121,11 +121,11 @@ h3 {
   z-index: 2;
 }
 
-#p1Sc {
+#p1Score {
   background-color: rgba(255, 0, 0, 0.8);
   z-index: 2;
 }
-#p2Sc {
+#p2Score {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 2;
 }
