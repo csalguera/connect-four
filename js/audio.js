@@ -1,20 +1,22 @@
 const backgroundMusic = new Audio('../../assets/sounds/01-Inspiring-Upbeat-Ambient-Full-Track.mp3')
 
-const clickSound = new Audio('../../assets/sounds/piece-sound-effect.mp3')
+const clickSound = new Audio('../../assets/sounds/Click Sound.mp3')
 
 const hoverSound = new Audio('../../assets/sounds/Hover Sound.mp3')
+
+const resetSound = new Audio('../../assets/sounds/Reset Sound.mp3')
 
 function playBGM() {
   backgroundMusic.play()
   backgroundMusic.loop = true
-  backgroundMusic.volume = 0.05
+  backgroundMusic.volume = 0.02
 }
 
 function muteBGM() {
   if (backgroundMusic.volume > 0) {
     backgroundMusic.volume = 0
   } else {
-    backgroundMusic.volume = 0.05
+    backgroundMusic.volume = 0.02
   }
 }
 
@@ -45,11 +47,26 @@ function muteHover() {
   }
 }
 
+function playReset() {
+  resetSound.volume = 1
+  resetSound.play()
+}
+
+function muteReset() {
+  if (resetSound.volume > 0) {
+    resetSound.volume = 0
+  } else {
+    resetSound.volume = 1
+  }
+}
+
 export {
   playBGM,
   muteBGM,
   playClick,
   muteClick,
   playHover,
-  muteHover
+  muteHover,
+  playReset,
+  muteReset
 }

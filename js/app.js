@@ -195,6 +195,11 @@ function clearGrid() {
     clearRow4()
     clearRow5()
     clearRow6()
+    if (!sfxMuted) {
+      allAudio.playReset()
+    } else {
+      allAudio.muteReset()
+    }
     setTimeout(updateGridClass, 1000)
     setTimeout(init, 1000)
   }
