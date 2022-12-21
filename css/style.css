@@ -111,13 +111,16 @@ h3 {
   padding: 10px;
   font-size: 24px;
   color: whitesmoke;
+  z-index: 2;
 }
 
 #p1Sc {
   background-color: rgba(255, 0, 0, 0.8);
+  z-index: 2;
 }
 #p2Sc {
   background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
 }
 
 #reset-btn {
@@ -340,6 +343,20 @@ h3 {
   to {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 100px;
+  }
+}
+
+.reset-6 {
+  animation: reset-row-6 1s;
+}
+
+@keyframes reset-row-6 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+    background-color: rgba(0, 0, 0, 0);
   }
 }
 
