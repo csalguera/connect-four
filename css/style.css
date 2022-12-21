@@ -22,15 +22,24 @@ body {
   margin: 10px auto;
 }
 
-section#grid, section#background-grid {
+section#grid,
+section#background-grid {
   display: grid;
-  grid-template-columns: repeat(7, 9vmin);
-  grid-template-rows: repeat(6, 9vmin);
+  grid-template-columns: repeat(7, 7vmin);
+  grid-template-rows: repeat(6, 7vmin);
   grid-gap: 1vmin;
   cursor: pointer;
 }
 
-div.gr, div.bg-gr {
+section#hover-row {
+  display: grid;
+  grid-template-columns: repeat(1, 55vmin);
+  grid-template-rows: repeat(6, 7vmin);
+  grid-gap: 1vmin;
+}
+
+div.gr,
+div.bg-gr {
   background: rgba(0, 0, 0, 0);
   border-radius: 50%;
   vertical-align: middle;
@@ -40,10 +49,15 @@ div.bg-gr {
   border: 5px solid yellow;
 }
 
-section#background-grid {
+section#background-grid,
+section#hover-row {
   position: absolute;
   pointer-events: none;
   z-index: 1;
+}
+
+section#hover-row {
+  z-index: 2;
 }
 
 h1 {
@@ -51,6 +65,7 @@ h1 {
   color: yellow;
   font-size: 48px;
   padding: 10px;
+  margin-top: 0;
 }
 
 #music-button,
@@ -76,15 +91,13 @@ h2 {
 
 #score-board {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 #score-board >
 h3 {
   padding: 5px;
-  margin-left: auto;
-  margin-right: auto;
   border-radius: 100px;
   padding: 10px;
   font-size: 24px;
@@ -99,7 +112,6 @@ h3 {
 }
 
 #reset-btn {
-  margin: auto;
   font-size: 24px;
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
@@ -114,7 +126,7 @@ h3 {
 }
 
 .fall-1 {
-  animation: fall-animation-row-1 0.5s ;
+  animation: fall-animation-row-1 0.2s ;
 }
 
 @keyframes fall-animation-row-1 {
@@ -127,7 +139,7 @@ h3 {
 }
 
 .fall-2 {
-  animation: fall-animation-row-2 0.5s ;
+  animation: fall-animation-row-2 0.2s ;
 }
 
 @keyframes fall-animation-row-2 {
@@ -140,7 +152,7 @@ h3 {
 }
 
 .fall-3 {
-  animation: fall-animation-row-3 0.5s ;
+  animation: fall-animation-row-3 0.2s ;
 }
 
 @keyframes fall-animation-row-3 {
@@ -153,7 +165,7 @@ h3 {
 }
 
 .fall-4 {
-  animation: fall-animation-row-4 0.5s ;
+  animation: fall-animation-row-4 0.2s ;
 }
 
 @keyframes fall-animation-row-4 {
@@ -166,7 +178,7 @@ h3 {
 }
 
 .fall-5 {
-  animation: fall-animation-row-5 0.5s ;
+  animation: fall-animation-row-5 0.2s ;
 }
 
 @keyframes fall-animation-row-5 {
@@ -179,7 +191,7 @@ h3 {
 }
 
 .fall-6 {
-  animation: fall-animation-row-6 0.5s ;
+  animation: fall-animation-row-6 0.2s ;
 }
 
 @keyframes fall-animation-row-6 {
@@ -206,5 +218,50 @@ h3 {
     grid-template-columns: repeat(7, 11vmin);
     grid-template-rows: repeat(6, 11vmin);
     grid-gap: 2vmin;
+  }
+}
+
+.row-1 {
+  animation: highlight-p1 1s infinite;
+}
+
+.row-2 {
+  animation: highlight-p1 1s infinite;
+}
+
+.row-3 {
+  animation: highlight-p1 1s infinite;
+}
+
+.row-4 {
+  animation: highlight-p1 1s infinite;
+}
+
+.row-5 {
+  animation: highlight-p1 1s infinite;
+}
+
+.row-6 {
+  animation: highlight-p1 1s infinite;
+}
+
+@keyframes highlight-p1 {
+  from {
+    background-color: transparent;
+    border-radius: 100px;
+  }
+  to {
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 100px;
+  }
+}
+@keyframes highlight-p2 {
+  from {
+    background-color: transparent;
+    border-radius: 100px;
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 100px;
   }
 }

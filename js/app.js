@@ -149,7 +149,7 @@ function render() {
 
 function updateGrid() {
   grid.forEach((val, idx) => {
-    if (val === null) {
+    if (!val) {
       gridEls[idx].style.background = ''
     } else if (val === 1) {
       gridEls[idx].style.background = 'red'
@@ -177,9 +177,9 @@ function updateScore() {
 
 function updateResetBtn() {
   if (!winner && !tie) {
-    resetBtn.hidden = true
+    resetBtn.style.visibility = 'hidden'
   } else {
-    resetBtn.hidden = false
+    resetBtn.style.visibility = 'visible'
   }
 }
 
@@ -470,7 +470,7 @@ function placeFromRow6(idx) {
 }
 
 function checkForTie() {
-  if (grid.some(val => val === null)) {
+  if (grid.some(val => !val)) {
     return
   } else {
     tie = true
