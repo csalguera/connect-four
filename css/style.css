@@ -346,6 +346,75 @@ h3 {
   }
 }
 
+.reset-1 {
+  animation: reset-row-1 1s;
+}
+
+@keyframes reset-row-1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(600%);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.reset-2 {
+  animation: reset-row-2 1s;
+}
+
+@keyframes reset-row-2 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(600%);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+.reset-3 {
+  animation: reset-row-3 1s;
+}
+
+@keyframes reset-row-3 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(600%);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.reset-4 {
+  animation: reset-row-4 1s;
+}
+
+@keyframes reset-row-4 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(600%);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.reset-5 {
+  animation: reset-row-5 1s;
+}
+
+@keyframes reset-row-5 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(600%);
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
 .reset-6 {
   animation: reset-row-6 1s;
 }
@@ -355,7 +424,7 @@ h3 {
     transform: translateY(0);
   }
   to {
-    transform: translateY(100%);
+    transform: translateY(600%);
     background-color: rgba(0, 0, 0, 0);
   }
 }

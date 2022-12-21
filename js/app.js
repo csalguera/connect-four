@@ -118,7 +118,7 @@ let clickDisable = false
 let sfxMuted = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gridEl => gridEl.addEventListener('click', handleClick))
-resetBtn.addEventListener('click', init)
+resetBtn.addEventListener('click', clearGrid)
 resetBtn.addEventListener('mousedown', changeResetBtnStyle)
 musicBtn.addEventListener('click', controlMusic)
 sfxBtn.addEventListener('click', sfxStatus)
@@ -187,15 +187,96 @@ function updateResetBtn() {
   }
 }
 
+function clearGrid() {
+  if (winner || tie) {
+    clearRow1()
+    clearRow2()
+    clearRow3()
+    clearRow4()
+    clearRow5()
+    clearRow6()
+    setTimeout(updateGridClass, 1000)
+    setTimeout(init, 1000)
+  }
+}
+
+function clearRow1() {
+  gridEls[0].classList.add('reset-1')
+  gridEls[1].classList.add('reset-1')
+  gridEls[2].classList.add('reset-1')
+  gridEls[3].classList.add('reset-1')
+  gridEls[4].classList.add('reset-1')
+  gridEls[5].classList.add('reset-1')
+  gridEls[6].classList.add('reset-1')
+}
+
+function clearRow2() {
+  gridEls[7].classList.add('reset-2')
+  gridEls[8].classList.add('reset-2')
+  gridEls[9].classList.add('reset-2')
+  gridEls[10].classList.add('reset-2')
+  gridEls[11].classList.add('reset-2')
+  gridEls[12].classList.add('reset-2')
+  gridEls[13].classList.add('reset-2')
+}
+
+function clearRow3() {
+  gridEls[14].classList.add('reset-3')
+  gridEls[15].classList.add('reset-3')
+  gridEls[16].classList.add('reset-3')
+  gridEls[17].classList.add('reset-3')
+  gridEls[18].classList.add('reset-3')
+  gridEls[19].classList.add('reset-3')
+  gridEls[20].classList.add('reset-3')
+}
+
+function clearRow4() {
+  gridEls[21].classList.add('reset-4')
+  gridEls[22].classList.add('reset-4')
+  gridEls[23].classList.add('reset-4')
+  gridEls[24].classList.add('reset-4')
+  gridEls[25].classList.add('reset-4')
+  gridEls[26].classList.add('reset-4')
+  gridEls[27].classList.add('reset-4')
+}
+
+function clearRow5() {
+  gridEls[28].classList.add('reset-5')
+  gridEls[29].classList.add('reset-5')
+  gridEls[30].classList.add('reset-5')
+  gridEls[31].classList.add('reset-5')
+  gridEls[32].classList.add('reset-5')
+  gridEls[33].classList.add('reset-5')
+  gridEls[34].classList.add('reset-5')
+}
+
+function clearRow6() {
+  gridEls[35].classList.add('reset-6')
+  gridEls[36].classList.add('reset-6')
+  gridEls[37].classList.add('reset-6')
+  gridEls[38].classList.add('reset-6')
+  gridEls[39].classList.add('reset-6')
+  gridEls[40].classList.add('reset-6')
+  gridEls[41].classList.add('reset-6')
+}
+
 function updateGridClass() {
   if (winner || tie) {
-    gridEls.forEach(gr => {
-      gr.classList.remove('fall-1')
-      gr.classList.remove('fall-2')
-      gr.classList.remove('fall-3')
-      gr.classList.remove('fall-4')
-      gr.classList.remove('fall-5')
-      gr.classList.remove('fall-6')
+    gridEls.forEach(gridEl => {
+      gridEl.classList.remove(
+        'fall-1',
+        'fall-2',
+        'fall-3',
+        'fall-4',
+        'fall-5',
+        'fall-6',
+        'reset-1',
+        'reset-2',
+        'reset-3',
+        'reset-4',
+        'reset-5',
+        'reset-6'
+        )
     })
   }
 }
