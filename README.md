@@ -12,11 +12,11 @@
 
 - Local Multiplayer
 - Includes highlight animation when hovering over rows and columns: </br>
-![Imgur](https://imgur.com/xiO4jhV.gif)
+![highlight-animation-gif](https://imgur.com/xiO4jhV.gif)
 - Includes animation when pieces are placed: </br>
-![Imgur](https://imgur.com/rnTyrlu.gif)
+![drop-animation-gif](https://imgur.com/rnTyrlu.gif)
 - Includes animation when game is reset: </br>
-![Imgur](https://imgur.com/tsF1ReW.gif)
+![reset-animation-gif](https://imgur.com/MYvVxU8.gif)
 - Scoreboard to keep track of player 1 and 2 scores: </br>
 ![Imgur](https://imgur.com/labFUul.png) ![Imgur](https://imgur.com/dJWwjoP.png)
 - Includes audio controls to mute/unmute music or sfx: </br>
