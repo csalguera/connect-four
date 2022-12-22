@@ -641,7 +641,7 @@ function controlSFX() {
 
 function handleMouseOver(evt) {
   const grIdx = parseInt(evt.target.id.replace('gr', ''))
-  if (winner) return
+  if (winner || tie) return
   if (grIdx <= 6) mouseOverRow1()
   if (grIdx >= 7 && grIdx <= 13) mouseOverRow2()
   if (grIdx >= 14 && grIdx <= 20) mouseOverRow3()
