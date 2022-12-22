@@ -35,6 +35,7 @@
 - [x] include highlight animation
 - [x] include reset animation
 - [ ] make highlight animation dynamic by highlighting lowest unocuppied row in a given column
+- [ ] dynamically change highlight animation when turn changes without need to hover
 - [ ] implement AI
 - [ ] implement menu with options:
   - display menu on bootup
