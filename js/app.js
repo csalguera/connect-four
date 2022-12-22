@@ -289,10 +289,10 @@ function clearRow6() {
 
 function handleClick(evt) {
   if (!clickDisable) {
-    clickDisable = true
+    comlumnFull = false
     const grIdx = parseInt(evt.target.id.replace('gr', ''))
-    if (winner || tie) return
-    if (comlumnFull) return
+    checkColumnFull(grIdx)
+    if (winner || tie || comlumnFull) return
     setTimeout(clickEnable, 600)
     placePiece(grIdx)
     animatePiece(grIdx)
@@ -303,9 +303,9 @@ function handleClick(evt) {
     }
     checkForTie()
     checkForWinner()
-    checkColumn(grIdx)
     switchPlayerTurn(grIdx)
     render()
+    clickDisable = true
   }
 }
 
@@ -313,7 +313,7 @@ function clickEnable() {
   clickDisable = false
 }
 
-function checkColumn(evt, idx) {
+function checkColumnFull(idx) {
   if (grid[idx] && grid[idx - 35]) {
     return comlumnFull = true
   } else if (grid[idx + 7] && grid[idx - 28]) {
@@ -326,8 +326,6 @@ function checkColumn(evt, idx) {
     return comlumnFull = true
   } else if (grid[idx + 35] && grid[idx]) {
     return comlumnFull = true
-  } else {
-    return comlumnFull = false
   }
 }
 
