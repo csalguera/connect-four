@@ -13,12 +13,11 @@
 ![Imgur](https://imgur.com/rnTyrlu.gif)
 - Includes animation when game is reset: </br>
 ![Imgur](https://imgur.com/tsF1ReW.gif)
-- Scoreboard to keep track of player 1 and 2 scores
-- Includes 2 sound effects for highlight animation
-- Includes sound effect when placing a piece
-- Includes sound effect for reset animation
-- Includes audio controls to mute/unmute music or sfx
-  - (music muted by default, sfx unmuted by default)
+- Scoreboard to keep track of player 1 and 2 scores: </br>
+![Imgur](https://imgur.com/labFUul.png) ![Imgur](https://imgur.com/dJWwjoP.png)
+- Includes audio controls to mute/unmute music or sfx: </br>
+![Imgur](https://imgur.com/4o9WMpF.png) ![Imgur](https://imgur.com/ynhjqlV.png)
+- Includes sound effects when placing pieces, hovering, and when game is reset
 - Includes background music, [attributed below](#attributions)
 
 ### Technologies Used:
@@ -27,6 +26,7 @@
 - Javascript
 
 ### Next Steps:
+- make highlight animation dynamic by highlighting lowest unocuppied row in a given column
 - implement AI
 - implement menu with options:
   - display menu on bootup
