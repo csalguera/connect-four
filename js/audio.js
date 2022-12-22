@@ -4,6 +4,8 @@ const clickSound = new Audio('../../assets/sounds/Click Sound.mp3')
 
 const hoverSound = new Audio('../../assets/sounds/Hover Sound.mp3')
 
+const hoverSound2 = new Audio('../../assets/sounds/Hover Sound 2.mp3')
+
 const resetSound = new Audio('../../assets/sounds/Reset Sound.mp3')
 
 function playBGM() {
@@ -47,6 +49,20 @@ function muteHover() {
   }
 }
 
+function playHover2() {
+  hoverSound2.volume = 0.05
+  hoverSound2.play()
+  hoverSound2.currentTime = 0
+}
+
+function muteHover2() {
+  if (hoverSound2.volume > 0) {
+    hoverSound2.volume = 0
+  } else {
+    hoverSound2.volume = 0.05
+  }
+}
+
 function playReset() {
   resetSound.volume = 1
   resetSound.play()
@@ -67,6 +83,8 @@ export {
   muteClick,
   playHover,
   muteHover,
+  playHover2,
+  muteHover2,
   playReset,
   muteReset
 }

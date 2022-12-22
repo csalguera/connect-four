@@ -647,9 +647,14 @@ function handleMouseOver(evt) {
   if (!(grIdx - 5) || !((grIdx - 5) % 7)) mouseOverColumn6()
   if (!(grIdx - 6) || !((grIdx - 6) % 7)) mouseOverColumn7()
   if (!sfxMuted) {
-    allAudio.playHover()
+    if (turn === 1) {
+      allAudio.playHover()
+    } else {
+      allAudio.playHover2()
+    }
   } else {
     allAudio.muteHover()
+    allAudio.muteHover2()
   }
 }
 
