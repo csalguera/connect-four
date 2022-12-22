@@ -10,7 +10,6 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: gray;
   text-align: center;
   user-select: none;
   background-image: url(../assets/images/5476306.jpg);
