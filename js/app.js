@@ -116,6 +116,7 @@ let p1Score = 0
 let p2Score = 0
 let clickDisable = false
 let sfxMuted = false
+let comlumnFull = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gridEl => gridEl.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', clearGrid)
@@ -291,6 +292,7 @@ function handleClick(evt) {
     clickDisable = true
     const grIdx = parseInt(evt.target.id.replace('gr', ''))
     if (winner || tie) return
+    if (comlumnFull) return
     setTimeout(clickEnable, 600)
     placePiece(grIdx)
     animatePiece(grIdx)
@@ -301,6 +303,7 @@ function handleClick(evt) {
     }
     checkForTie()
     checkForWinner()
+    checkColumn(grIdx)
     switchPlayerTurn(grIdx)
     render()
   }
@@ -308,6 +311,24 @@ function handleClick(evt) {
 
 function clickEnable() {
   clickDisable = false
+}
+
+function checkColumn(evt, idx) {
+  if (grid[idx] && grid[idx - 35]) {
+    return comlumnFull = true
+  } else if (grid[idx + 7] && grid[idx - 28]) {
+    return comlumnFull = true
+  } else if (grid[idx + 14] && grid[idx - 21]) {
+    return comlumnFull = true
+  } else if (grid[idx + 21] && grid[idx - 14]) {
+    return comlumnFull = true
+  } else if (grid[idx + 28] && grid[idx - 7]) {
+    return comlumnFull = true
+  } else if (grid[idx + 35] && grid[idx]) {
+    return comlumnFull = true
+  } else {
+    return comlumnFull = false
+  }
 }
 
 function placePiece(idx) {
@@ -575,20 +596,8 @@ function checkForWinner() {
   })
 }
 
-function switchPlayerTurn(idx) {
+function switchPlayerTurn() {
   if (winner) return
-  // Prvents turn switch when column is full and Row 6 is clicked on
-  if (grid[idx] && grid[idx - 35]) return
-  // Prevents turn switch when column is full and Row 5 is clicked on
-  if (grid[idx + 7] && grid[idx - 28]) return
-  // Prevents turn switch when column is full and Row 4 is clicked on
-  if (grid[idx + 14] && grid[idx - 21]) return
-  // Prevents turn switch when column is full and Row 3 is clicked on
-  if (grid[idx + 21] && grid[idx - 14]) return
-  // Prevents turn switch when column is full and Row 2 is clicked on
-  if (grid[idx + 28] && grid[idx - 7]) return
-  // Prevents turn switch when column is full and Row 1 is clicked on
-  if (grid[idx + 35] && grid[idx]) return
   turn *= -1
 }
 
