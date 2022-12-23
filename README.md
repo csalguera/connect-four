@@ -28,7 +28,8 @@
 
 - HTML
 - CSS
-- Javascript
+- JavaScript
+- Git
 
 <h3><img src="https://i.imgur.com/yL0PsN0.png" width="15px"> Next Steps:</h3>
 
@@ -43,7 +44,5 @@
   - option for ai
   - option for audio
 
-<h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Attributions</h3>
-
-- [Background Image](https://www.freepik.com/free-vector/gradient-grainy-gradient-texture_14485901.htm#query=background&position=11&from_view=keyword) from freepik
-- [Background Music](https://www.no-copyright-music.com/) composed by Liborio Conti
+<h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Credits</h3>
+- [Attributions](./attributions.md)
