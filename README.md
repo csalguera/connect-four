@@ -22,7 +22,7 @@
 - Includes audio controls to mute/unmute music or sfx: </br>
 ![Imgur](https://imgur.com/4o9WMpF.png) ![Imgur](https://imgur.com/ynhjqlV.png)
 - Includes sound effects when placing pieces, hovering, and when game is reset
-- Includes background music, [attributed below](#attributions)
+- Includes background music, check the attributions below
 
 <h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Technologies Used:</h3>
 
@@ -44,5 +44,6 @@
   - option for ai
   - option for audio
 
-<h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Credits</h3>
-- [Attributions](./attributions.md)
+<h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Attributions:</h3>
+
+- View the [attributions](./attributions.md) here
