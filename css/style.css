@@ -141,7 +141,26 @@ h3 {
   border: solid 2px black;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px black solid;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: yellow;
+}
 
+footer > * {
+  padding: 0px 5px;
+}
+
+footer > a {
+  text-decoration: none;
+  color: yellow;
+}
 
 .fall-1 {
   animation: fall-animation-row-1 0.2s ;
