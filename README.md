@@ -1,4 +1,4 @@
-![Imgur](https://i.imgur.com/rI6e29W.jpg)
+![Connect Four Screenshot](https://i.imgur.com/rI6e29W.jpg)
 
 <h2><img src ="https://i.imgur.com/yL0PsN0.png" width="18px"> Connect Four <img src="https://i.imgur.com/BY8kLAC.png" width="18px"></h2>
 
@@ -46,4 +46,4 @@
 
 <h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Attributions:</h3>
 
-- View the [attributions](./attributions.md)
+- View the [attributions](https://github.com/csalguera/connect-four/blob/main/attributions.md)
