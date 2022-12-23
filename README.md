@@ -35,8 +35,9 @@
 
 - [x] include highlight animation
 - [x] include reset animation
+- [x] include final animation when winner or tie condition is met
 - [ ] make highlight animation dynamic by highlighting lowest unocuppied row in a given column
-- [ ] dynamically change highlight animation when turn changes without need to hover
+- [ ] change highlight animation when turn changes without need to hover
 - [ ] implement AI
 - [ ] implement menu with options:
   - display menu on bootup
