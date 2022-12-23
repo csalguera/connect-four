@@ -46,4 +46,4 @@
 
 <h3><img src="https://i.imgur.com/BY8kLAC.png" width="15px"> Attributions:</h3>
 
-- View the [attributions](./attributions.md) here
+- View the [attributions](./attributions.md)
