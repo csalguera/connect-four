@@ -585,6 +585,7 @@ function checkForTie() {
   if (grid.some(val => !val)) {
     return
   } else {
+    gameOver = true
     setTimeout(declareTie, 200)
   }
 }
@@ -597,6 +598,7 @@ function declareTie() {
 function checkForWinner() {
   winningCombos.forEach(combo => {
     if (Math.abs(grid[combo[0]] + grid[combo[1]] + grid[combo[2]] + grid[combo[3]]) === 4) {
+      gameOver = true
       setTimeout(declareWinner, 200)
     }
   })
