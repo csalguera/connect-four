@@ -117,7 +117,6 @@ let p2Score = 0
 let clickDisable = false
 let sfxMuted = false
 let comlumnFull = false
-let gameOver = false
 // Event Listeners ---------------------------------------------------------
 gridEls.forEach(gridEl => gridEl.addEventListener('click', handleClick))
 resetBtn.addEventListener('click', clearGrid)
@@ -133,7 +132,6 @@ init()
 function init() {
   winner = false
   tie = false
-  gameOver = false
   turn = 1
   grid = [
     null, null, null, null, null, null, null,
@@ -303,7 +301,6 @@ function handleClick(evt) {
     } else {
       allAudio.muteClick()
     }
-    if (gameOver) return
     checkForTie()
     checkForWinner()
     switchPlayerTurn(grIdx)
@@ -585,28 +582,16 @@ function checkForTie() {
   if (grid.some(val => !val)) {
     return
   } else {
-    gameOver = true
-    setTimeout(declareTie, 200)
+    tie = true
   }
-}
-
-function declareTie() {
-  tie = true
-  render()
 }
 
 function checkForWinner() {
   winningCombos.forEach(combo => {
     if (Math.abs(grid[combo[0]] + grid[combo[1]] + grid[combo[2]] + grid[combo[3]]) === 4) {
-      gameOver = true
-      setTimeout(declareWinner, 200)
+      winner = true
     }
   })
-}
-
-function declareWinner() {
-  winner = true
-  render()
 }
 
 function switchPlayerTurn() {
