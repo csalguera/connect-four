@@ -3,7 +3,7 @@
 <h2><img src ="https://i.imgur.com/yL0PsN0.png" width="18px"> Connect Four <img src="https://i.imgur.com/BY8kLAC.png" width="18px"></h2>
 
 - The game where 2 players try to line up four pieces in a line, column, or row first
-- Players are able place pieces by clicking on any row
+- Players can place pieces by clicking on any row
 
 # <a href='https://csalguera-connect-four.netlify.app/' target='_blank'><img src="./assets/images/connect-four-favicon.png" width="25px"> Launch Game</a>
 - [Planning Materials](https://docs.google.com/document/d/1eFOWNLd0jvsS_BokVLgmD05pS4bVuhh0zlPVgnRTyAg/edit)
@@ -15,7 +15,7 @@
 ![highlight-animation-gif](https://imgur.com/xiO4jhV.gif)
 - Includes animation when pieces are placed: </br>
 ![drop-animation-gif](https://imgur.com/rnTyrlu.gif)
-- Includes animation when game is reset: </br>
+- Includes animation when the game is reset: </br>
 ![reset-animation-gif](https://imgur.com/MYvVxU8.gif)
 - Scoreboard to keep track of player 1 and 2 scores: </br>
 ![Imgur](https://imgur.com/labFUul.png) ![Imgur](https://imgur.com/dJWwjoP.png)
@@ -35,8 +35,8 @@
 
 - [x] include highlight animation
 - [x] include reset animation
-- [ ] make highlight animation dynamic by highlighting lowest unocuppied row in a given column
-- [ ] change highlight animation when turn changes without need to hover
+- [ ] make highlight animation dynamic by highlighting the lowest unocuppied row in a given column
+- [ ] change highlight animation when turn changes without the need to hover
 - [ ] implement AI
 - [ ] implement menu with options:
   - display menu on bootup
